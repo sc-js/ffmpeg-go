@@ -32,7 +32,7 @@ func ProbeWithTimeoutExec(fileName string, timeOut time.Duration, kwargs KwArgs)
 		ctx, cancel = context.WithTimeout(context.Background(), timeOut)
 		defer cancel()
 	}
-	cmd := exec.CommandContext(ctx, "ffprobe", args...)
+	cmd := exec.CommandContext(ctx, ".\\ffprobe.exe", args...)
 	buf := bytes.NewBuffer(nil)
 	stdErrBuf := bytes.NewBuffer(nil)
 	cmd.Stdout = buf
