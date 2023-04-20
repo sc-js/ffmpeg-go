@@ -35,7 +35,7 @@ func ProbeReaderWithTimeoutExec(r io.Reader, timeOut time.Duration, kwargs KwArg
 		ctx, cancel = context.WithTimeout(context.Background(), timeOut)
 		defer cancel()
 	}
-	cmd := exec.CommandContext(ctx, "ffprobe", args...)
+	cmd := exec.CommandContext(ctx, ".\\ffprobe.exe", args...)
 	cmd.Stdin = r
 	buf := bytes.NewBuffer(nil)
 	stdErrBuf := bytes.NewBuffer(nil)
